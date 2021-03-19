@@ -1,0 +1,148 @@
+/*GENERAL RULES*/
+.nav-link {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+@font-face {
+    font-family: OiRegular;
+    src: url(../assets/Oi/Oi-Regular.ttf);
+}
+
+@font-face {
+    font-family: BebasRegular;
+    src: url(../assets/Bebas_Neue/BebasNeue-Regular.ttf);
+}
+
+/*NAVIGATION*/
+.navigation {
+    background-color: #ac364a;
+    color: #ffff;
+    display: inline-block;
+    width: 25%;
+    text-align: center;
+    box-shadow: 2px 2px 2px #000;
+    height: 100vh;
+    font-family: BebasRegular;
+    position: fixed;
+}
+
+/*MENU*/
+.menu-img {
+    padding: 2%;
+    cursor: pointer;
+}
+
+.menu-img div img {
+    box-shadow: 2px 2px 2px #000;
+}
+
+.menu-txt-head {
+    font-size: 30px;
+    color: #000;
+    background-color: #fff;
+    box-shadow: 2px 2px 2px #000;
+    font-family: OiRegular
+}
+
+.nav-item div {
+    font-size: 30px;
+}
+
+.nav-item div:hover {
+    color: #000;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.bottom-of-page {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    padding-left: 7%;
+    padding-top: 1%;
+}
+.short-bio{
+    text-align: left;
+}
+
+.short-bio div{
+    margin-left: 10px;
+    margin-top: 5px;
+    font-size: 20px;
+}
+.bio-info{
+    color: #000
+}
+/*DEFAULT CONTENT*/
+.default-content-container {
+    position: fixed;
+    top: 50%;
+    display: inline-block;
+    width: 100%;
+}
+
+.loader {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 30%;
+}
+
+/*ABOUT ME SECTION*/
+.about-me-section, .welcome, .contact-possibilities {
+    font-family: BebasRegular;
+    text-align: center;
+    padding-top: 3%;
+}
+.about-me-section h1{
+    font-size: 80px;
+}
+
+.about-me-section h2{
+    font-size: 60px;
+}
+
+.about-me-section h3{
+    font-size: 50px;
+}
+
+.welcome p{
+    font-size: 120px;
+}
+
+.about-me-section p{
+    font-size: 40px;
+}
+
+/*CONTACT*/
+.social-networks .picture img {
+    width: 25px;
+    height: 25px;
+}
+
+.contact-possibilities p{
+    font-size: 30px;
+}
+
+.email-form{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 15%;
+    background-color: #ac364a;
+}
+.email-form .submit-btn{
+    margin-top: 1%;
+}
+
+.email-form form{
+    padding: 2%;
+    color: #fff;
+    font-size: 30px;
+    text-align: left
+}
+
+.email-contact{
+    margin-top: 100px;
+    font-size: 70px
+}
