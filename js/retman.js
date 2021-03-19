@@ -11,54 +11,54 @@ function loadPersonalData() {
     $('#commercial').text(commercial);
 }
 
-function loadPage(pageType){
+function loadPage(pageType, lang){
 
-    loadDefaultPage();
+    loadDefaultPage(lang);
 
     setTimeout(function(){
         switch(pageType){
             case "about":
-                loadAboutMePage()
+                loadAboutMePage(lang)
                 break;
             case "after":
-                loadAfterHoursPage();
+                loadAfterHoursPage(lang);
                 break
             case "blog":
-                loadBlogPage();
+                loadBlogPage(lang);
                 break;
             case "contact":
-                loadContactPage();
+                loadContactPage(lang);
                 break;
             default:
-                loadWelcomePage();
+                loadWelcomePage(lang);
                 break
         }
         loadPersonalData();
     }, 2000)
 }
 
-function loadDefaultPage() {
-    $("#content").load("htmls/defaultContent.html");
+function loadDefaultPage(lang) {
+    $("#content").load(lang === 'pl' ? 'defaultContent.html' : "htmls/defaultContent.html");
 }
 
-function loadAboutMePage(){
-    $("#content").load("htmls/about.html");
+function loadAboutMePage(lang){
+    $("#content").load(lang === 'pl' ? 'about.html' : "htmls/about.html");
 }
 
-function loadAfterHoursPage(){
-    $("#content").load("htmls/after-hours.html");
+function loadAfterHoursPage(lang){
+    $("#content").load(lang === 'pl' ? 'after-hours.html' : "htmls/after-hours.html");
 }
 
-function loadBlogPage(){
-    $("#content").load("htmls/blog.html");
+function loadBlogPage(lang){
+    $("#content").load(lang === 'pl' ? 'blog.html' : "htmls/blog.html");
 }
 
-function loadContactPage(){
-    $("#content").load("htmls/contact.html");
+function loadContactPage(lang){
+    $("#content").load(lang === 'pl' ? 'contact.html' : "htmls/contact.html");
 }
 
-function loadWelcomePage(){
-    $("#content").load("htmls/welcome.html");
+function loadWelcomePage(lang){
+    $("#content").load(lang === 'pl' ? 'welcome.html' : "htmls/welcome.html");
 }
 
 function submitAndSendMail(){

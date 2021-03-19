@@ -45,6 +45,15 @@
     font-family: OiRegular
 }
 
+.menu-txt-head img{
+    border-radius: 5px;
+    width:50px;
+    height:20px;
+    border: 1px solid black;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
 .nav-item div {
     font-size: 30px;
 }
