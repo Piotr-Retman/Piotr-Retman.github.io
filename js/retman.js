@@ -9,6 +9,7 @@ function loadPersonalData() {
     $('#lang').text('Java');
     $('#amateur').text(amateurYears);
     $('#commercial').text(commercial);
+    $('#cur-year').text(curYear);
 }
 
 function loadPage(pageType, lang){
@@ -59,8 +60,4 @@ function loadContactPage(lang){
 
 function loadWelcomePage(lang){
     $("#content").load(lang === 'pl' ? 'welcome.html' : "htmls/welcome.html");
-}
-
-function submitAndSendMail(){
-    console.log("mail sending....")
 }
