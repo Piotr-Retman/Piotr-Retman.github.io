@@ -116,6 +116,18 @@ function setLanguage(lang) {
     document.documentElement.lang = lang;
 }
 
+function handleLoader() {
+    const loader = document.getElementById('loader');
+    if (loader) {
+        loader.classList.add('fade-out');
+        document.body.classList.remove('loading');
+        // Usunięcie z DOM po zakończeniu animacji
+        setTimeout(() => {
+            loader.remove();
+        }, 2000);
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('preferredLang') || (navigator.language.startsWith('pl') ? 'pl' : 'en');
     setLanguage(savedLang);
@@ -123,4 +135,9 @@ document.addEventListener('DOMContentLoaded', () => {
     updateThemeByTime();
     // Sprawdzaj motyw co minutę, w razie gdyby użytkownik zostawił otwartą stronę
     setInterval(updateThemeByTime, 60000);
+});
+
+window.addEventListener('load', () => {
+    // Dodajemy małe opóźnienie, aby efekt był zauważalny nawet przy szybkim ładowaniu
+    setTimeout(handleLoader, 1000);
 });
