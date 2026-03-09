@@ -1,0 +1,314 @@
+:root {
+    --bg-color: #f5f5f5;
+    --text-color: #1a1a1a;
+    --primary-color: #ac364a;
+    --secondary-color: #ffffff;
+    --accent-color: #2d3436;
+    --card-bg: #ffffff;
+    --section-alt-bg: #f0f0f0;
+    --shadow: 0 4px 12px rgba(0,0,0,0.08);
+    --font-main: 'Quicksand', sans-serif;
+    --font-head: 'Bebas Neue', sans-serif;
+    --nav-bg: #f5f5f5;
+}
+
+body.dark-theme {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --secondary-color: #1e1e1e;
+    --card-bg: #1e1e1e;
+    --section-alt-bg: #181818;
+    --accent-color: #f4f4f4;
+    --shadow: 0 4px 6px rgba(0,0,0,0.5);
+    --nav-bg: #121212;
+}
+
+@media (prefers-color-scheme: dark) {
+    body:not(.light-theme) {
+        --bg-color: #121212;
+        --text-color: #e0e0e0;
+        --secondary-color: #1e1e1e;
+        --card-bg: #1e1e1e;
+        --section-alt-bg: #181818;
+        --accent-color: #f4f4f4;
+        --shadow: 0 4px 6px rgba(0,0,0,0.5);
+        --nav-bg: #121212;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-head);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--nav-bg);
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    transition: background-color 0.3s;
+}
+
+.logo {
+    font-family: var(--font-head);
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.logo a {
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.lang-switch {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.lang-btn {
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: 2px;
+    border-radius: 3px;
+    transition: border-color 0.2s;
+}
+
+.lang-btn.active {
+    border-color: var(--primary-color);
+}
+
+.lang-btn img {
+    width: 24px;
+    height: auto;
+    display: block;
+}
+
+/* Sections */
+section {
+    padding: 100px 10% 60px;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero {
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../assets/code-coding-computer-34676.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 80px; /* Offset for fixed nav */
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+}
+
+.hero-image {
+    margin: 2rem 0;
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(172, 54, 74, 0.5);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Bio Stats */
+.bio-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.stat-item {
+    background: var(--card-bg);
+    border-bottom: 4px solid var(--primary-color);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 120px;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.stat-item span:not(.stat-label) {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-weight: 700;
+    color: var(--primary-color);
+    display: block;
+    margin-top: 0.5rem;
+    word-break: break-word;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-color);
+    opacity: 0.7;
+    font-weight: 500;
+}
+
+/* Contact */
+.contact-content {
+    text-align: center;
+}
+
+.email-big {
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    margin: 2rem 0;
+    word-break: break-all;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.social-links img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.2s, filter 0.3s;
+}
+
+body.light-theme .social-links img {
+    filter: brightness(0); /* Ciemne ikony w jasnym motywie */
+}
+
+body.dark-theme .social-links img {
+    filter: brightness(0) invert(1); /* Białe ikony w ciemnym motywie */
+}
+
+/* Obsługa preferencji systemowych jeśli klasy JS nie zostały jeszcze nadane */
+@media (prefers-color-scheme: dark) {
+    body:not(.light-theme) .social-links img {
+        filter: brightness(0) invert(1);
+    }
+}
+
+.social-links img:hover {
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: var(--section-alt-bg);
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* simple burger menu could be added here */
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    section {
+        padding: 80px 5% 40px;
+    }
+}
